@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\WebAPI.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -39,7 +40,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\#References#\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\#References#\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Swashbuckle.Core">
+      <HintPath>..\..\..\#References#\Swashbuckle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -135,7 +145,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -145,6 +154,30 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Swagger\css\reset.css" />
+    <Content Include="Content\Swagger\css\screen.css" />
+    <Content Include="Content\Swagger\images\explorer_icons.png" />
+    <Content Include="Content\Swagger\images\logo_small.png" />
+    <Content Include="Content\Swagger\images\pet_store_api.png" />
+    <Content Include="Content\Swagger\images\throbber.gif" />
+    <Content Include="Content\Swagger\images\wordnik_api.png" />
+    <Content Include="Content\Swagger\index.html" />
+    <Content Include="Content\Swagger\lib\backbone-min.js" />
+    <Content Include="Content\Swagger\lib\handlebars-1.0.0.js" />
+    <Content Include="Content\Swagger\lib\highlight.7.3.pack.js" />
+    <Content Include="Content\Swagger\lib\jquery-1.8.0.min.js" />
+    <Content Include="Content\Swagger\lib\jquery.ba-bbq.min.js" />
+    <Content Include="Content\Swagger\lib\jquery.slideto.min.js" />
+    <Content Include="Content\Swagger\lib\jquery.wiggle.min.js" />
+    <Content Include="Content\Swagger\lib\shred.bundle.js" />
+    <Content Include="Content\Swagger\lib\shred\content.js" />
+    <Content Include="Content\Swagger\lib\swagger-client.js" />
+    <Content Include="Content\Swagger\lib\swagger-oauth.js" />
+    <Content Include="Content\Swagger\lib\swagger.js" />
+    <Content Include="Content\Swagger\lib\underscore-min.js" />
+    <Content Include="Content\Swagger\o2c.html" />
+    <Content Include="Content\Swagger\swagger-ui.js" />
+    <Content Include="Content\Swagger\swagger-ui.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
