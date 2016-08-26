@@ -3,6 +3,9 @@ using System.Web.Mvc;
 
 namespace WebAPI
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)

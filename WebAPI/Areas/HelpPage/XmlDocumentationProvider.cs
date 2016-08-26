@@ -43,7 +43,11 @@ namespace WebAPI.Areas.HelpPage
             XPathNavigator methodNode = GetMethodNode(actionDescriptor);
             return GetTagValue(methodNode, "summary");
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameterDescriptor"></param>
+        /// <returns></returns>
         public virtual string GetDocumentation(HttpParameterDescriptor parameterDescriptor)
         {
             ReflectedHttpParameterDescriptor reflectedParameterDescriptor = parameterDescriptor as ReflectedHttpParameterDescriptor;
@@ -63,7 +67,11 @@ namespace WebAPI.Areas.HelpPage
 
             return null;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="actionDescriptor"></param>
+        /// <returns></returns>
         public string GetResponseDocumentation(HttpActionDescriptor actionDescriptor)
         {
             XPathNavigator methodNode = GetMethodNode(actionDescriptor);
