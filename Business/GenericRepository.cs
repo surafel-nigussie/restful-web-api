@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using Data;
+using System.Data.SqlClient;
+using Entity;
+using System.Data;
 
 namespace Business
 {
@@ -65,6 +68,7 @@ namespace Business
         {
             _entities.Entry(entity).State = EntityState.Modified;
         }
+
         public virtual void Save()
         {
             _entities.SaveChanges();
@@ -74,6 +78,16 @@ namespace Business
         {
             WebAPI_ModelContainer ctxt = (WebAPI_ModelContainer)Context;
             return ctxt.ChangeTracker.HasChanges();
+        }
+
+        public virtual IEnumerable<T> GetWithRawSql(int ID, string FName)
+        {
+            var result = Context.Database.SqlQuery<T>(
+                                                        "EXEC MySchema.MyProcedure @MyID, @MyFirstName",
+                                                        new SqlParameter("MyID", SqlDbType.Int) { Value = Convert.ToInt32(ID) } ,
+                                                        new SqlParameter("MyFirstName", SqlDbType.NVarChar) { Value = Convert.ToString(FName) }
+                                                    ).ToList();
+            return result;
         }
 
         #region IDisposable Support

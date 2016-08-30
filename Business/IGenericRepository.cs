@@ -16,5 +16,6 @@ namespace Business
         System.Linq.IQueryable<T> GetAll();
         System.Linq.IQueryable<T> GetAll(int start, int count);
         void Save();
+        IEnumerable<T> GetWithRawSql(int ID, string FName);
     }
 }

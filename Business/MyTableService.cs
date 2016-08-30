@@ -2,6 +2,8 @@
 using Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,10 +29,17 @@ namespace Business
         #endregion
 
         #region Item
+
         public IEnumerable<MyTableEntity> GetAllMyTables()
         {
             var myTables = _myTableRepo.GetAll().ToList();
             return myTables._ToMyTableEntity();
+        }
+
+        public IEnumerable<MyTableEntity> GetMyTableByID(int ID)
+        {
+            var myTable = _myTableRepo.FindBy(x => x.MyID == ID).ToList();
+            return myTable._ToMyTableEntity();
         }
 
         #endregion

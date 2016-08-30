@@ -224,6 +224,10 @@
       <Project>{ec8236ef-d38a-4bd9-b879-9ac88b112a10}</Project>
       <Name>Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{98483618-745b-40ae-adc3-606d31f1f15e}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{8a6aacc7-e224-4ad7-b7bd-b3f169029165}</Project>
       <Name>Entity</Name>
